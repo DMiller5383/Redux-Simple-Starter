@@ -5,3 +5,10 @@ export function selectBook(book) {
     payload: book
   }
 }
+
+export function removeBook(book) {
+  return {
+    type: 'BOOK_REMOVED',
+    book: book
+  }
+}

@@ -11,7 +11,7 @@ class BookList extends Component {
           key={book.title}
           onClick={()=> this.props.selectBook(book)}
           className="list-group-item">
-          {book.title}
+          {book.title} <a href="#" className="removeBook" onClick={()=> console.log('clicked')}>X</a>
         </li>
       );
     });
@@ -34,7 +34,11 @@ function mapStateToProps(state) {
 //Anything returned from this function will end up as props on the book list container
 function mapDispatchToProps(dispatch) {
   //Whenever selectBook is called, the result shoudl be passed to all reducers
-  return bindActionCreators({selectBook: selectBook}, dispatch);
+  let actions = {
+    selectBook,
+    removeBook
+  }
+  return bindActionCreators(actions, dispatch);
 }
 
 //Promote booklist from a component to a container - it needs to know about this new dispatch mothod, selectbook.  Make it available as a props
