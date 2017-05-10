@@ -10,11 +10,15 @@ export default function(state=null, action=null) {
       }
       return newBooks;
     default:
-      return [
-        {title: 'Javascript: The Good Parts',  pages: 101},
-        {title: 'Harry Potter', pages: 39},
-        {title: 'The Dark Tower', pages: 85},
-        {title: 'Eloquent Ruby', pages: 1}
-      ];
+      if(state) {
+        return state;
+      } else {
+        return [
+          {title: 'Javascript: The Good Parts',  pages: 101},
+          {title: 'Harry Potter', pages: 39},
+          {title: 'The Dark Tower', pages: 85},
+          {title: 'Eloquent Ruby', pages: 1}
+        ];
+      }
   }
 }

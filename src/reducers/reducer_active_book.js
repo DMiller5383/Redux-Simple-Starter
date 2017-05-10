@@ -3,9 +3,12 @@
 export default function(state=null, action) {
   switch(action.type){
     case 'BOOK_SELECTED':
+      console.log(state);
       return action.payload;
     case 'BOOK_REMOVED':
-      return action.payload;
+      if(state.title == action.book.title) {
+        return null;
+      }
   }
   return state;
 }

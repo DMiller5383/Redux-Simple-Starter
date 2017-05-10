@@ -7,6 +7,7 @@ export function selectBook(book) {
 }
 
 export function removeBook(book) {
+
   return {
     type: 'BOOK_REMOVED',
     book: book
